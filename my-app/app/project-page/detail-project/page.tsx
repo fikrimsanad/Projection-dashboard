@@ -10,8 +10,20 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
+import Link from "next/link";
+import { Input } from "@/components/ui/input";
+import { useForm } from "react-hook-form";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import React from "react";
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 
 const invoices = [
   {
@@ -228,8 +240,106 @@ function DetailProject() {
               </TableBody>
             </Table>
           </TabsContent>
-          <TabsContent value="Riwayat">Change your password here.</TabsContent>
-          <TabsContent value="Form">Change your password here.</TabsContent>
+          <TabsContent value="Riwayat">
+            <Table className="mt-6">
+              <TableHeader>
+                <TableRow>
+                  <TableHead className="">Tanggal</TableHead>
+                  <TableHead>Tipe Transaksi</TableHead>
+                  <TableHead>Nama Transaksi</TableHead>
+                  <TableHead>Jenis Pembayaran</TableHead>
+                  <TableHead>Nilai</TableHead>
+                  <TableHead>Detail</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow className="hover:bg-zinc-100">
+                  <TableCell className="font-medium">12/04/2026</TableCell>
+                  <TableCell>Pengeluaran</TableCell>
+                  <TableCell>ADM Pokja</TableCell>
+                  <TableCell>Cash</TableCell>
+                  <TableCell>Rp 20.000.000</TableCell>
+                  <TableCell>
+                    <Link href={""}>Detail</Link>
+                  </TableCell>
+                </TableRow>
+                <TableRow className="hover:bg-zinc-100">
+                  <TableCell className="font-medium">12/04/2026</TableCell>
+                  <TableCell>Pengeluaran</TableCell>
+                  <TableCell>Entertaiment</TableCell>
+                  <TableCell>Transfer</TableCell>
+                  <TableCell>Rp 10.000.000</TableCell>
+                  <TableCell>
+                    <Link href={""}>Detail</Link>
+                  </TableCell>
+                </TableRow>
+                <TableRow className="hover:bg-zinc-100">
+                  <TableCell className="font-medium">12/04/2026</TableCell>
+                  <TableCell>Pengeluaran</TableCell>
+                  <TableCell>ADM JAMLAK</TableCell>
+                  <TableCell>Transfer</TableCell>
+                  <TableCell>Rp 5.000.000</TableCell>
+                  <TableCell>
+                    <Link href={""}>Detail</Link>
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </TabsContent>
+          <TabsContent value="Form">
+            <div className="my-10 px-4 py-8">
+              <form className="space-y-5">
+                <div className="grid w-full items-center gap-3">
+                  <Label htmlFor="picture">Tanggal</Label>
+                  <Input id="picture" type="date" />
+                </div>
+                <div className="grid w-full  items-center gap-3">
+                  <Label htmlFor="picture">Tipe Transaksi</Label>
+                  <Select>
+                    <SelectTrigger className="w-full">
+                      <SelectValue placeholder="Pilih Tipe Transaksi " />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="light">Pendapatan</SelectItem>
+                      <SelectItem value="dark">Pengeluaran</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div className="grid w-full  items-center gap-3">
+                  <Label htmlFor="picture">Nama Transaksi</Label>
+                  <Select>
+                    <SelectTrigger className="w-full">
+                      <SelectValue placeholder="Pilih Nama Transaksi " />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="light">Pendapatan</SelectItem>
+                      <SelectItem value="dark">Pengeluaran</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div className="grid w-full  items-center gap-3">
+                  <Label htmlFor="picture">Jenis Pembayaran</Label>
+                  <Select>
+                    <SelectTrigger className="w-full">
+                      <SelectValue placeholder="Pilih Jenis Pembayaran " />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="light">Pendapatan</SelectItem>
+                      <SelectItem value="dark">Pengeluaran</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div className="grid w-full items-center gap-3">
+                  <Label htmlFor="picture">Nilai</Label>
+                  <Input id="nilai" type="number" placeholder="Rp 0, -" />
+                </div>
+                <div className="grid w-full items-center gap-3">
+                  <Label htmlFor="picture">Keterangan</Label>
+                  <Textarea />
+                </div>
+              </form>
+            </div>
+          </TabsContent>
         </Tabs>
       </div>
     </div>
