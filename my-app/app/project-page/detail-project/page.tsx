@@ -50,6 +50,9 @@ const invoices = [
     nilaidibayarkan: "Rp 5.000.000.000",
     sisapembayaran: "Rp 7.000.000.000",
   },
+];
+
+const expense = [
   {
     accountname: "HPP",
     nilai: "Rp 7.000.000.000",
@@ -228,6 +231,28 @@ function DetailProject() {
               </TableHeader>
               <TableBody>
                 {invoices.map((hpp) => (
+                  <TableRow key={hpp.accountname} className="hover:bg-zinc-100">
+                    <TableCell className="font-medium">
+                      {hpp.accountname}
+                    </TableCell>
+                    <TableCell>{hpp.nilai}</TableCell>
+                    <TableCell>{hpp.nilaidibayarkan}</TableCell>
+                    <TableCell>{hpp.sisapembayaran}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+            <Table className="mt-6">
+              <TableHeader>
+                <TableRow>
+                  <TableHead className="">Account</TableHead>
+                  <TableHead>Nilai</TableHead>
+                  <TableHead>Nilai Dibayarkan</TableHead>
+                  <TableHead>Sisa Budget</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {expense.map((hpp) => (
                   <TableRow key={hpp.accountname} className="hover:bg-zinc-100">
                     <TableCell className="font-medium">
                       {hpp.accountname}
