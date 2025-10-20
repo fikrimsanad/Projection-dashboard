@@ -162,7 +162,7 @@ function DetailProject() {
                 <h3 className="text-green-500 text-sm">Rp 28.000.000.000</h3>
               </div>
               <div className="space-y-2">
-                <p className="text-zinc-900 text-xs">Belum PPH</p>
+                <p className="text-zinc-900 text-xs">Nilai PPH</p>
                 <h3 className="text-green-500 text-sm">Rp 28.000.000.000</h3>
               </div>
             </div>
@@ -209,109 +209,85 @@ function DetailProject() {
           </div>
         </div>
       </div>
-      <div className="py-10 px-8">
+      <div className="py-10 px-4">
         <Tabs defaultValue="Proyeksi" className="px-8">
-          <div className="py-10">
-            <h2 className="font-bold text-3xl">Proyeksi Laba Rugi</h2>
-          </div>
           <TabsList>
             <TabsTrigger value="Proyeksi">Proyeksi</TabsTrigger>
-            <TabsTrigger value="Riwayat">Riwayat</TabsTrigger>
-            <TabsTrigger value="Form">Form Input</TabsTrigger>
+            <TabsTrigger value="Form">Input Transaksi</TabsTrigger>
+            <TabsTrigger value="Riwayat">Riwayat Transaksi</TabsTrigger>
           </TabsList>
           <TabsContent value="Proyeksi">
-            <Table className="mt-6">
-              <TableHeader>
-                <TableRow>
-                  <TableHead className="">Account</TableHead>
-                  <TableHead>Nilai</TableHead>
-                  <TableHead>Nilai Dibayarkan</TableHead>
-                  <TableHead>Sisa Budget</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {invoices.map((hpp) => (
-                  <TableRow key={hpp.accountname} className="hover:bg-zinc-100">
-                    <TableCell className="font-medium">
-                      {hpp.accountname}
-                    </TableCell>
-                    <TableCell>{hpp.nilai}</TableCell>
-                    <TableCell>{hpp.nilaidibayarkan}</TableCell>
-                    <TableCell>{hpp.sisapembayaran}</TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-            <Table className="mt-6">
-              <TableHeader>
-                <TableRow>
-                  <TableHead className="">Account</TableHead>
-                  <TableHead>Nilai</TableHead>
-                  <TableHead>Nilai Dibayarkan</TableHead>
-                  <TableHead>Sisa Budget</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {expense.map((hpp) => (
-                  <TableRow key={hpp.accountname} className="hover:bg-zinc-100">
-                    <TableCell className="font-medium">
-                      {hpp.accountname}
-                    </TableCell>
-                    <TableCell>{hpp.nilai}</TableCell>
-                    <TableCell>{hpp.nilaidibayarkan}</TableCell>
-                    <TableCell>{hpp.sisapembayaran}</TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TabsContent>
-          <TabsContent value="Riwayat">
-            <Table className="mt-6">
-              <TableHeader>
-                <TableRow>
-                  <TableHead className="">Tanggal</TableHead>
-                  <TableHead>Tipe Transaksi</TableHead>
-                  <TableHead>Nama Transaksi</TableHead>
-                  <TableHead>Jenis Pembayaran</TableHead>
-                  <TableHead>Nilai</TableHead>
-                  <TableHead>Detail</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                <TableRow className="hover:bg-zinc-100">
-                  <TableCell className="font-medium">12/04/2026</TableCell>
-                  <TableCell>Pengeluaran</TableCell>
-                  <TableCell>ADM Pokja</TableCell>
-                  <TableCell>Cash</TableCell>
-                  <TableCell>Rp 20.000.000</TableCell>
-                  <TableCell>
-                    <Link href={""}>Detail</Link>
-                  </TableCell>
-                </TableRow>
-                <TableRow className="hover:bg-zinc-100">
-                  <TableCell className="font-medium">12/04/2026</TableCell>
-                  <TableCell>Pengeluaran</TableCell>
-                  <TableCell>Entertaiment</TableCell>
-                  <TableCell>Transfer</TableCell>
-                  <TableCell>Rp 10.000.000</TableCell>
-                  <TableCell>
-                    <Link href={""}>Detail</Link>
-                  </TableCell>
-                </TableRow>
-                <TableRow className="hover:bg-zinc-100">
-                  <TableCell className="font-medium">12/04/2026</TableCell>
-                  <TableCell>Pengeluaran</TableCell>
-                  <TableCell>ADM JAMLAK</TableCell>
-                  <TableCell>Transfer</TableCell>
-                  <TableCell>Rp 5.000.000</TableCell>
-                  <TableCell>
-                    <Link href={""}>Detail</Link>
-                  </TableCell>
-                </TableRow>
-              </TableBody>
-            </Table>
+            <div className="mt-20">
+              <h2 className="font-bold text-3xl">Proyeksi Laba Rugi</h2>
+            </div>
+            <div className="grid grid-cols-1 gap-6 mt-10">
+              <div className="px-8 py-2 border border-gray-200 rounded-lg h-fit">
+                <div className="py-6">
+                  <h3 className="font-bold text-lg">Pendapatan</h3>
+                </div>
+                <Table className="">
+                  <TableHeader>
+                    <TableRow className="bg-zinc-300">
+                      <TableHead className="">Account</TableHead>
+                      <TableHead>Nilai</TableHead>
+                      <TableHead>Nilai Dibayarkan</TableHead>
+                      <TableHead>Sisa Budget</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {invoices.map((hpp) => (
+                      <TableRow
+                        key={hpp.accountname}
+                        className="hover:bg-zinc-100"
+                      >
+                        <TableCell className="font-medium">
+                          {hpp.accountname}
+                        </TableCell>
+                        <TableCell>{hpp.nilai}</TableCell>
+                        <TableCell>{hpp.nilaidibayarkan}</TableCell>
+                        <TableCell>{hpp.sisapembayaran}</TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </div>
+
+              <div className="px-8 py-2 border border-gray-200 rounded-lg">
+                <div className="py-6">
+                  <h3 className="font-bold text-lg">Pengeluaran</h3>
+                </div>
+                <Table className="">
+                  <TableHeader>
+                    <TableRow className="bg-zinc-300">
+                      <TableHead className="">Account</TableHead>
+                      <TableHead>Nilai</TableHead>
+                      <TableHead>Nilai Dibayarkan</TableHead>
+                      <TableHead>Sisa Budget</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {expense.map((hpp) => (
+                      <TableRow
+                        key={hpp.accountname}
+                        className="hover:bg-zinc-100"
+                      >
+                        <TableCell className="font-medium">
+                          {hpp.accountname}
+                        </TableCell>
+                        <TableCell>{hpp.nilai}</TableCell>
+                        <TableCell>{hpp.nilaidibayarkan}</TableCell>
+                        <TableCell>{hpp.sisapembayaran}</TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </div>
+            </div>
           </TabsContent>
           <TabsContent value="Form">
+            <div className="mt-20">
+              <h2 className="font-bold text-3xl">Input Transaksi</h2>
+            </div>
             <div className="my-10 px-4 py-8">
               <form className="space-y-5">
                 <div className="grid w-full items-center gap-3">
@@ -363,6 +339,151 @@ function DetailProject() {
                   <Textarea />
                 </div>
               </form>
+            </div>
+          </TabsContent>
+          <TabsContent value="Riwayat">
+            <div className="mt-20">
+              <h2 className="font-bold text-3xl">Riwayat Transaksi</h2>
+            </div>
+            <div className="py-8 space-y-2">
+              <div className="bg-gray-50 w-full py-8 px-8 rounded-lg grid grid-cols-7 gap-12">
+                <div>
+                  <p>#123456</p>
+                </div>
+                <div>
+                  <p>21/12/2025</p>
+                </div>
+                <div>
+                  <p>Pengeluaran</p>
+                </div>
+                <div>
+                  <p>HPP</p>
+                </div>
+                <div>
+                  <p>Transfer</p>
+                </div>
+                <div>
+                  <p>20.000.000</p>
+                </div>
+                <div>
+                  <p>Detail</p>
+                </div>
+              </div>
+              <div className="bg-gray-50 w-full py-8 px-8 rounded-lg grid grid-cols-7 gap-12">
+                <div>
+                  <p>#123456</p>
+                </div>
+                <div>
+                  <p>21/12/2025</p>
+                </div>
+                <div>
+                  <p>Pengeluaran</p>
+                </div>
+                <div>
+                  <p>HPP</p>
+                </div>
+                <div>
+                  <p>Transfer</p>
+                </div>
+                <div>
+                  <p>20.000.000</p>
+                </div>
+                <div>
+                  <p>Detail</p>
+                </div>
+              </div>
+              <div className="bg-gray-50 w-full py-8 px-8 rounded-lg grid grid-cols-7 gap-12">
+                <div>
+                  <p>#123456</p>
+                </div>
+                <div>
+                  <p>21/12/2025</p>
+                </div>
+                <div>
+                  <p>Pengeluaran</p>
+                </div>
+                <div>
+                  <p>HPP</p>
+                </div>
+                <div>
+                  <p>Transfer</p>
+                </div>
+                <div>
+                  <p>20.000.000</p>
+                </div>
+                <div>
+                  <p>Detail</p>
+                </div>
+              </div>
+              <div className="bg-gray-50 w-full py-8 px-8 rounded-lg grid grid-cols-7 gap-12">
+                <div>
+                  <p>#123456</p>
+                </div>
+                <div>
+                  <p>21/12/2025</p>
+                </div>
+                <div>
+                  <p>Pengeluaran</p>
+                </div>
+                <div>
+                  <p>HPP</p>
+                </div>
+                <div>
+                  <p>Transfer</p>
+                </div>
+                <div>
+                  <p>20.000.000</p>
+                </div>
+                <div>
+                  <p>Detail</p>
+                </div>
+              </div>
+              <div className="bg-gray-50 w-full py-8 px-8 rounded-lg grid grid-cols-7 gap-12">
+                <div>
+                  <p>#123456</p>
+                </div>
+                <div>
+                  <p>21/12/2025</p>
+                </div>
+                <div>
+                  <p>Pengeluaran</p>
+                </div>
+                <div>
+                  <p>HPP</p>
+                </div>
+                <div>
+                  <p>Transfer</p>
+                </div>
+                <div>
+                  <p>20.000.000</p>
+                </div>
+                <div>
+                  <p>Detail</p>
+                </div>
+              </div>
+              <div className="bg-gray-50 w-full py-8 px-8 rounded-lg grid grid-cols-7 gap-12">
+                <div>
+                  <p>#123456</p>
+                </div>
+                <div>
+                  <p>21/12/2025</p>
+                </div>
+                <div>
+                  <p>Pengeluaran</p>
+                </div>
+                <div>
+                  <p>HPP</p>
+                </div>
+                <div>
+                  <p>Transfer</p>
+                </div>
+                <div>
+                  <p>20.000.000</p>
+                </div>
+                <div>
+                  <p>Detail</p>
+                </div>
+              </div>
             </div>
           </TabsContent>
         </Tabs>
