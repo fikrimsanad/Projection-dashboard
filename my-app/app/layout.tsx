@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { ChevronDown } from "lucide-react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,6 +29,42 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <div className="">
+          <div className="">
+            <div className="w-full border-b-2 border-b-gray-100 py-4 bg-white px-14 grid grid-flow-col justify-between">
+              <div className="px-4 ">
+                <img src={"/logo-opprim-long.png"} className="h-13"></img>
+              </div>
+              <div className="px-4">
+                <Button className="bg-gray-50 text-black py-6 hover:cursor-pointer hover:bg-gray-200 justify-around">
+                  <Avatar>
+                    <AvatarImage src="https://github.com/shadcn.png" />
+                  </Avatar>
+                  <p>Finance Admin</p>
+                  <ChevronDown />
+                </Button>
+              </div>
+            </div>
+            <div className="w-full border-b-2 border-b-gray-100 py-4 shadow-lg bg-white grid grid-flow-col justify-center gap-18">
+              <Link href={"/"} className="font-bold text-sm">
+                Dashboard
+              </Link>
+              <Link href={"/project-page"} className="font-bold text-sm">
+                Project List
+              </Link>
+              <Link href={""} className="font-bold text-sm">
+                Project Progress
+              </Link>
+              <Link href={""} className="font-bold text-sm">
+                Finance
+              </Link>
+              <Link href={""} className="font-bold text-sm">
+                Data
+              </Link>
+            </div>
+          </div>
+        </div>
+
         {children}
       </body>
     </html>

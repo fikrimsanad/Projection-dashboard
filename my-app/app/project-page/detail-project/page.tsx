@@ -141,7 +141,7 @@ const expense = [
 
 function DetailProject() {
   return (
-    <div className="px-8 py-10">
+    <div className="px-8 py-10 mt-32">
       <div className="px-10 py-8">
         <h2 className="text-3xl font-bold">Command Center Polda Jawa Timur</h2>
       </div>
@@ -149,7 +149,7 @@ function DetailProject() {
         <div className="w-full grid grid-cols-3 gap-4 rounded-lg px-8">
           <div className="bg-gray-50 py-5 h-fit  px-6 space-y-5 rounded-lg">
             <div className="space-y-3">
-              <Badge className="text-white bg-zinc-900">
+              <Badge className="text-white bg-blue-900">
                 Total Nilai Kontrak
               </Badge>
               <h3 className="text-zinc-900 text-3xl font-bold">
@@ -169,7 +169,7 @@ function DetailProject() {
           </div>
           <div className="bg-gray-50 py-5 h-fit  px-6 space-y-5 rounded-lg">
             <div className="space-y-3">
-              <Badge className="text-white bg-zinc-900">
+              <Badge className="text-white bg-blue-900">
                 Total Nilai Bersih
               </Badge>
               <h3 className="text-zinc-900 text-3xl font-bold">
@@ -189,7 +189,7 @@ function DetailProject() {
           </div>
           <div className="bg-gray-50 py-5 h-fit  px-6 space-y-5 rounded-lg">
             <div className="space-y-3">
-              <Badge className="text-white bg-zinc-900">
+              <Badge className="text-white bg-blue-900">
                 Total Nilai Pengeluaran
               </Badge>
               <h3 className="text-zinc-900 text-3xl font-bold">
