@@ -4,7 +4,7 @@ import Dashboardpage from "./dashboard-page/page";
 
 export default function Home() {
   return (
-    <div className="py-4 px-4 mt-32">
+    <div className="py-4 px-8 mt-24">
       <Dashboardpage />
     </div>
   );

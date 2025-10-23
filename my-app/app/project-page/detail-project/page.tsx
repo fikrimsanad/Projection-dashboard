@@ -141,8 +141,8 @@ const expense = [
 
 function DetailProject() {
   return (
-    <div className="px-8 py-10 mt-32">
-      <div className="px-10 py-8">
+    <div className="px-8 py-10 mt-24">
+      <div className="px-10 py-4">
         <h2 className="text-3xl font-bold">Command Center Polda Jawa Timur</h2>
       </div>
       <div className="py-5 w-full bg-white">

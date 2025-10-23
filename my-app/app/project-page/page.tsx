@@ -3,7 +3,7 @@ import React from "react";
 
 function ProjectPage() {
   return (
-    <div className="px-8 mt-32">
+    <div className="px-8 mt-24">
       <div className="px-10 py-15">
         <h2 className="font-bold text-2xl">List Project</h2>
       </div>
