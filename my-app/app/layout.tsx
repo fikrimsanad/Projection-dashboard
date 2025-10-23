@@ -29,11 +29,31 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <div className="">
+        <div className="fixed z-50 top-0 left-0 right-0">
           <div className="">
-            <div className="w-full border-b-2 border-b-gray-100 py-4 bg-white px-14 grid grid-flow-col justify-between">
+            <div className="w-full border-b-2 border-b-gray-100 py-4 bg-white px-10 grid grid-flow-col justify-between">
               <div className="px-4 ">
-                <img src={"/logo-opprim-long.png"} className="h-13"></img>
+                <Link href={"/"}>
+                  {" "}
+                  <img src={"/logo-opprim-long.png"} className="h-13"></img>
+                </Link>
+              </div>
+              <div className="grid grid-flow-col justify-center gap-18 py-5">
+                <Link href={"/"} className="font-bold text-sm">
+                  Dashboard
+                </Link>
+                <Link href={"/project-page"} className="font-bold text-sm">
+                  Project List
+                </Link>
+                <Link href={""} className="font-bold text-sm">
+                  Project Progress
+                </Link>
+                <Link href={""} className="font-bold text-sm">
+                  Finance
+                </Link>
+                <Link href={""} className="font-bold text-sm">
+                  Data
+                </Link>
               </div>
               <div className="px-4">
                 <Button className="bg-gray-50 text-black py-6 hover:cursor-pointer hover:bg-gray-200 justify-around">
@@ -44,23 +64,6 @@ export default function RootLayout({
                   <ChevronDown />
                 </Button>
               </div>
-            </div>
-            <div className="w-full border-b-2 border-b-gray-100 py-4 shadow-lg bg-white grid grid-flow-col justify-center gap-18">
-              <Link href={"/"} className="font-bold text-sm">
-                Dashboard
-              </Link>
-              <Link href={"/project-page"} className="font-bold text-sm">
-                Project List
-              </Link>
-              <Link href={""} className="font-bold text-sm">
-                Project Progress
-              </Link>
-              <Link href={""} className="font-bold text-sm">
-                Finance
-              </Link>
-              <Link href={""} className="font-bold text-sm">
-                Data
-              </Link>
             </div>
           </div>
         </div>

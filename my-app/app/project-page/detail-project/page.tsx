@@ -300,7 +300,7 @@ function DetailProject() {
                     <SelectTrigger className="w-full">
                       <SelectValue placeholder="Pilih Tipe Transaksi " />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent className="bg-white">
                       <SelectItem value="light">Pendapatan</SelectItem>
                       <SelectItem value="dark">Pengeluaran</SelectItem>
                     </SelectContent>
@@ -312,7 +312,7 @@ function DetailProject() {
                     <SelectTrigger className="w-full">
                       <SelectValue placeholder="Pilih Nama Transaksi " />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent className="bg-white">
                       <SelectItem value="light">Pendapatan</SelectItem>
                       <SelectItem value="dark">Pengeluaran</SelectItem>
                     </SelectContent>
@@ -324,7 +324,7 @@ function DetailProject() {
                     <SelectTrigger className="w-full">
                       <SelectValue placeholder="Pilih Jenis Pembayaran " />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent className="bg-white">
                       <SelectItem value="light">Pendapatan</SelectItem>
                       <SelectItem value="dark">Pengeluaran</SelectItem>
                     </SelectContent>
