@@ -76,8 +76,14 @@ function Dashboardpage() {
           </div>
         </div>
       </div>
-      <div className="px-10 py-15">
+      <div className="px-10 py-15 flex justify-between">
         <h2 className="font-bold text-2xl">List Project</h2>
+        <Link
+          href={"/create-project-page"}
+          className="bg-blue-800 text-white px-10 py-4 rounded-lg"
+        >
+          Tambah Project
+        </Link>
       </div>
       <div className="grid grid-cols-3 gap-4 px-8 mb-10">
         <Link
