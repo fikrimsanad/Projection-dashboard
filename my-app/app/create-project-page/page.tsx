@@ -103,6 +103,15 @@ function createproject() {
                   className="border border-gray-300 py-5"
                 />
               </div>
+              <div className="grid w-full items-center gap-3">
+                <Label>Nilai Pendapatan Bersih</Label>
+                <Input
+                  id="pendapatan-bersih"
+                  type="number"
+                  placeholder="Rp 0, -"
+                  className="border border-gray-300 py-5"
+                />
+              </div>
             </div>
           </div>
 
@@ -262,6 +271,15 @@ function createproject() {
                   className="border border-gray-300 py-5"
                 />
               </div>
+            </div>
+            <div className="grid w-full items-center gap-3">
+              <Label>Nilai Total Pengeluaran</Label>
+              <Input
+                id="ppn"
+                type="number"
+                placeholder="Rp 0, -"
+                className="border border-gray-300 py-5"
+              />
             </div>
             <div className="grid w-full items-center gap-3">
               <Label htmlFor="picture">Keterangan</Label>
